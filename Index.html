@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beranda Posyandu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+      }
+      .judul {
+        font-family: 'Playfair Display', serif;
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-100 text-gray-800">
+  <!-- Navbar -->
+  <nav class="bg-[#FFAEAE] fixed top-0 left-0 w-full z-50 shadow-md">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    
+<!-- Logo -->
+<div class="flex items-center gap-2">
+  <img src="img/logo.png" class="bg-gray-900 w-12 h-12 rounded" alt="Logo Posyandu">
+  <div class="leading-tight">
+    <h1 class="font-bold text-[#3B1C32] text-lg">Posyandu</h1>
+    <p class="text-[11px] text-[#3B1C32] -mt-0.5">Pos Pelayanan Terpadu</p>
+  </div>
+</div>
+
+    <!-- Menu Desktop -->
+    <div class="hidden md:flex items-center gap-8 text-lg font-medium">
+      <!-- Tengah: Menu -->
+    <ul class="hidden md:flex gap-10 text-lg font-medium absolute left-1/2 -translate-x-1/2">
+      <li>
+        <a  class="relative pb-1 after:content-[''] after:absolute after:left-0 after:bottom-0
+                  after:w-0 after:h-[3px] after:bg-[#3B1C32] after:rounded-full
+                  hover:after:w-full after:transition-all after:duration-300 font-extrabold text-[#3B1C32]">
+          Beranda
+        </a>
+      </li>
+      <li>
+        <a href="program.html"
+           class="relative pb-1 after:content-[''] after:absolute after:left-0 after:bottom-0
+                  after:w-0 after:h-[3px] after:bg-[#3B1C32] after:rounded-full
+                  hover:after:w-full after:transition-all after:duration-300">
+          Program
+        </a>
+      </li>
+      <li>
+        <a href="about.html"
+           class="relative pb-1 after:content-[''] after:absolute after:left-0 after:bottom-0
+                  after:w-0 after:h-[3px] after:bg-[#3B1C32] after:rounded-full
+                  hover:after:w-full after:transition-all after:duration-300">
+          Tentang Kami
+        </a>
+      </li>
+    </ul>
+
+      <!-- Tombol Hubungi Kami (desktop) -->
+      <a href="https://wa.me/6281217030602"
+         class="bg-[#FF7F7F] hover:bg-[#3B1C32] text-white px-5 py-2 rounded-md font-semibold text-[15px] transition">
+        Hubungi Kami
+      </a>
+    </div>
+
+    <!-- Tombol Mobile (Hubungi + Hamburger) -->
+    <div class="flex items-center gap-x-4 md:hidden">
+      <a href="https://wa.me/6281217030602"
+         class="bg-[#FF7F7F] hover:bg-[#3B1C32] text-white px-4 py-2 rounded-md font-semibold text-sm transition">
+        Hubungi Kami
+      </a>
+      <button id="menu-btn" class="text-3xl text-[#151624] focus:outline-none">☰</button>
+    </div>
+  </div>
+
+  <!-- Menu Mobile -->
+  <div id="menu" class="hidden md:hidden absolute top-20 right-6 bg-[#FFD1D1]/90 backdrop-blur-lg 
+    rounded-lg shadow-lg p-5 w-48 flex flex-col space-y-4 text-[#151624] font-medium 
+    transform transition-transform duration-300">
+    <a class="text-black font-bold">Beranda</a>
+    <a href="program.html" class="text-[#3B1C32] hover:text-[#e65b5b] font-semibold">Program</a>
+    <a href="about.html" class="text-[#3B1C32] hover:text-[#e65b5b] font-semibold">Tentang Kami</a>
+  </div>
+</nav>
+
+<script>
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('menu');
+
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+    if (!menu.classList.contains('hidden')) {
+      menu.classList.remove('translate-y-[-10px]', 'opacity-0');
+      menu.classList.add('translate-y-0', 'opacity-100');
+      btn.textContent = '✕';
+    } else {
+      menu.classList.remove('translate-y-0', 'opacity-100');
+      menu.classList.add('translate-y-[-10px]', 'opacity-0');
+      btn.textContent = '☰';
+    }
+  });
+</script>
+
+<!-- Hero Carousel -->
+<div class="relative h-[500px] w-full overflow-hidden">
+
+  <!-- Foto Hero -->
+  <div id="hero1" class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out" style="background-image: url('img/hero1.png'); opacity: 1;"></div>
+  <div id="hero2" class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out" style="background-image: url('img/hero2.png'); opacity: 0;"></div>
+  <div id="hero3" class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out" style="background-image: url('img/hero3.png'); opacity: 0;"></div>
+
+  <!-- Overlay Gelap -->
+  <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center text-white px-6">
+    <h1 class="text-4xl md:text-6xl font-bold mb-4">Selamat Datang di Posyandu Kenanga</h1>
+    <p class="text-lg md:text-2xl max-w-2xl">Layanan kesehatan untuk ibu dan anak, rutin dan terpercaya</p>
+  </div>
+</div>
+
+<!-- Script Hero Carousel -->
+<script>
+  const heroes = [
+    document.getElementById('hero1'),
+    document.getElementById('hero2'),
+    document.getElementById('hero3')
+  ];
+  let current = 0;
+
+  function nextHero() {
+    heroes[current].style.opacity = 0; // sembunyikan foto sekarang
+    current = (current + 1) % heroes.length;
+    heroes[current].style.opacity = 1; // tampilkan foto berikutnya
+  }
+
+  setInterval(nextHero, 5000); // ganti setiap 5 detik (bisa diubah sesuai kebutuhan)
+</script>
+
+    <!-- Posyandu Section -->
+    <section class="bg-white py-16 px-6 md:px-20 text-center">
+  <h2 class="judul text-4xl font-bold text-[#3] text-[#3B1C32] mb-8 tracking-wide">
+    Apa Itu Posyandu?
+  </h2>
+  <p class="max-w-5xl mx-auto text-gray-700 text-[15px] leading-relaxed">
+    <span class="font-semibold">Posyandu (Pos Pelayanan Terpadu)</span> adalah wadah pelayanan kesehatan dasar
+    yang dikelola dan diselenggarakan dari, oleh, untuk, dan bersama masyarakat.
+    Tujuannya untuk meningkatkan derajat kesehatan masyarakat, terutama ibu, bayi,
+    dan balita, melalui kegiatan seperti penimbangan berat badan, imunisasi, pemeriksaan
+    ibu hamil, penyuluhan gizi, dan pelayanan keluarga berencana (KB).
+  </p>
+  <p class="max-w-3xl mx-auto text-gray-700 text-[15px] leading-relaxed mt-4">
+    Posyandu menjadi jembatan antara masyarakat dengan tenaga kesehatan serta
+    berperan penting dalam membentuk keluarga yang sehat, mandiri, dan sejahtera.
+  </p>
+
+<!-- Tambahan visual sederhana -->
+<div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto px-4">
+
+  <!-- Animasi fade-in lembut -->
+  <div class="bg-[#FFE5E5] rounded-xl p-6 shadow-sm animate-fade-in-up">
+    <h3 class="font-semibold text-[#3B1C32] text-lg mb-2 text-center">Pelayanan Kesehatan</h3>
+    <p class="text-sm text-gray-700 text-center">
+      Melayani imunisasi, pemeriksaan ibu hamil, dan pemantauan tumbuh kembang anak.
+    </p>
+  </div>
+
+  <div class="bg-[#FFE5E5] rounded-xl p-6 shadow-sm animate-fade-in-up [animation-delay:0.2s]">
+    <h3 class="font-semibold text-[#3B1C32] text-lg mb-2 text-center">Penyuluhan Gizi</h3>
+    <p class="text-sm text-gray-700 text-center">
+      Memberikan edukasi tentang gizi seimbang dan pentingnya asupan makanan sehat.
+    </p>
+  </div>
+
+  <div class="bg-[#FFE5E5] rounded-xl p-6 shadow-sm animate-fade-in-up [animation-delay:0.4s]">
+    <h3 class="font-semibold text-[#3B1C32] text-lg mb-2 text-center">Keluarga Berencana</h3>
+    <p class="text-sm text-gray-700 text-center">
+      Mendukung program KB dengan memberikan layanan dan informasi yang tepat.
+    </p>
+  </div>
+</div>
+
+<!-- Tambahkan animasi fade-in di bawah -->
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  /* Delay manual biar muncul satu-satu */
+  .animate-fade-in-up:nth-child(1) { animation-delay: 0.1s; }
+  .animate-fade-in-up:nth-child(2) { animation-delay: 0.3s; }
+  .animate-fade-in-up:nth-child(3) { animation-delay: 0.5s; }
+</style>
+</section>
+
+<!-- Struktur Kepengurusan -->
+<section class="bg-[#f8bebe] py-16 text-center overflow-hidden">
+  <h2 class="text-3xl font-bold text-gray-900 mb-3">Struktur Kepengurusan</h2>
+  <p class="max-w-2xl mx-auto text-gray-700 text-[15px] mb-12 px-4">
+    Posyandu memiliki struktur kepengurusan yang terdiri dari ketua serta staf dan petugas
+    yang bekerja sama untuk memberikan pelayanan kesehatan, gizi, dan edukasi terbaik bagi masyarakat.
+  </p>
+
+  <div class="flex flex-col md:flex-row justify-center items-stretch gap-10 px-6">
+    <!-- Ketua Card -->
+    <div
+      class="bg-[#2C122D] text-white rounded-2xl p-6 w-full md:w-80 shadow-lg transition-all duration-700 ease-out animate-fadeUp flex flex-col justify-between"
+    >
+      <div>
+        <h3 class="text-center font-semibold mb-4 uppercase text-sm tracking-wider">
+          Ketua Posyandu
+        </h3>
+        <div class="bg-white w-28 h-36 mx-auto rounded-md border border-gray-300 mb-4"></div>
+        <p class="text-center text-sm font-semibold mb-2">Rahma Sari</p>
+        <p class="text-[13px] text-justify leading-relaxed opacity-90">
+          “Posyandu bukan hanya tempat pelayanan, tetapi juga wadah kebersamaan dan edukasi bagi kita semua.
+          Dengan semangat gotong royong dan kepedulian, mari kita wujudkan masyarakat yang sehat, mandiri, dan sejahtera.”
+        </p>
+      </div>
+    </div>
+
+    <!-- Staff & Petugas Carousel -->
+    <div
+      class="bg-[#2C122D] text-white rounded-2xl p-6 w-full md:w-80 shadow-lg transition-all duration-700 ease-out animate-fadeUp delay-200 flex flex-col justify-between relative"
+    >
+      <div>
+        <h3 class="text-center font-semibold mb-4 uppercase text-sm tracking-wider">
+          Staff & Petugas
+        </h3>
+        <div id="staffCarousel" class="relative w-full overflow-hidden rounded-md">
+          <div class="carousel-track flex transition-transform duration-700 ease-in-out">
+            <!-- Slide 1 -->
+            <div class="slide flex-shrink-0 w-full">
+              <div class="bg-white w-28 h-36 mx-auto rounded-md border border-gray-300 mb-4"></div>
+              <p class="text-center text-sm font-semibold mb-2">Siti Rahmawati</p>
+              <p class="text-[13px] text-justify leading-relaxed opacity-90">
+                Bertugas di bagian pencatatan dan pendataan tumbuh kembang balita serta membantu kegiatan imunisasi. 
+                Ia juga mendukung pelaporan rutin untuk memastikan data kesehatan selalu akurat.
+              </p>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide flex-shrink-0 w-full">
+              <div class="bg-white w-28 h-36 mx-auto rounded-md border border-gray-300 mb-4"></div>
+              <p class="text-center text-sm font-semibold mb-2">Dwi Lestari</p>
+              <p class="text-[13px] text-justify leading-relaxed opacity-90">
+                Menangani penyuluhan gizi dan memberikan edukasi kepada ibu-ibu terkait pola makan sehat,
+                pentingnya pemberian ASI eksklusif, serta pencegahan stunting pada balita.
+              </p>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide flex-shrink-0 w-full">
+              <div class="bg-white w-28 h-36 mx-auto rounded-md border border-gray-300 mb-4"></div>
+              <p class="text-center text-sm font-semibold mb-2">Nur Aini</p>
+              <p class="text-[13px] text-justify leading-relaxed opacity-90">
+                Membantu pelaksanaan program keluarga berencana dan pelayanan kesehatan masyarakat. 
+                Nur juga aktif dalam mengoordinasikan jadwal kegiatan rutin posyandu bersama tim.
+              </p>
+            </div>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <!-- Animasi Fade -->
+  <style>
+  @keyframes fadeUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fadeUp {
+    animation: fadeUp 1s ease forwards;
+  }
+  .delay-200 {
+    animation-delay: 0.2s;
+  }
+  </style>
+  <script>
+  const carousel = document.querySelector('#staffCarousel .carousel-track');
+  const slides = document.querySelectorAll('#staffCarousel .slide');
+  let index = 0;
+  let interval;
+
+  const startCarousel = () => {
+    interval = setInterval(() => {
+      index = (index + 1) % slides.length;
+      carousel.style.transform = `translateX(-${index * 100}%)`;
+    }, 5500); // jeda baca lebih panjang
+  };
+
+  const stopCarousel = () => clearInterval(interval);
+
+  startCarousel();
+
+  const container = document.getElementById('staffCarousel');
+  container.addEventListener('mouseenter', stopCarousel);
+  container.addEventListener('mouseleave', startCarousel);
+  </script>
+
+<!-- Jadwal Layanan -->
+<section id="jadwal" class="bg-[#FF9C9C] py-16 text-center relative overflow-hidden">
+  <div class="container mx-auto px-6">
+    <!-- Judul -->
+    <h2 class="text-4xl font-extrabold text-[#2C122D] mb-3 fade-in-scroll">
+      Jadwal Layanan
+    </h2>
+
+    <!-- Deskripsi -->
+    <p class="max-w-2xl mx-auto text-gray-700 text-base leading-relaxed mb-12 fade-in-scroll">
+      Posyandu menyelenggarakan berbagai layanan kesehatan masyarakat secara rutin, 
+      mulai dari pemeriksaan balita, ibu hamil, hingga penyuluhan gizi. 
+      Berikut jadwal kegiatan yang dapat Anda ikuti.
+    </p>
+
+    <!-- Carousel -->
+    <div class="relative w-full flex justify-center items-center overflow-hidden" id="carousel">
+      <div class="flex items-center justify-center gap-8 transition-transform duration-700 ease-in-out" id="carousel-track">
+        <!-- Card 1 -->
+        <div class="carousel-card bg-[#2C122D] text-white w-52 h-64 rounded-2xl shadow-lg flex flex-col justify-center items-center">
+          <div class="bg-white w-24 h-24 rounded-lg mb-3"></div>
+          <h3 class="font-semibold text-base">Pemeriksaan Balita</h3>
+          <p class="text-[12px] px-3 mt-1 text-gray-200 text-center">Setiap Senin, pukul 08.00–11.00 WIB</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="carousel-card bg-[#2C122D] text-white w-52 h-64 rounded-2xl shadow-lg flex flex-col justify-center items-center">
+          <div class="bg-white w-24 h-24 rounded-lg mb-3"></div>
+          <h3 class="font-semibold text-base">Ibu Hamil & Menyusui</h3>
+          <p class="text-[12px] px-3 mt-1 text-gray-200 text-center">Setiap Rabu, pukul 09.00–12.00 WIB</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="carousel-card bg-[#2C122D] text-white w-52 h-64 rounded-2xl shadow-lg flex flex-col justify-center items-center">
+          <div class="bg-white w-24 h-24 rounded-lg mb-3"></div>
+          <h3 class="font-semibold text-base">Penyuluhan Gizi</h3>
+          <p class="text-[12px] px-3 mt-1 text-gray-200 text-center">Setiap Jumat, pukul 08.30–10.30 WIB</p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="carousel-card bg-[#2C122D] text-white w-52 h-64 rounded-2xl shadow-lg flex flex-col justify-center items-center">
+          <div class="bg-white w-24 h-24 rounded-lg mb-3"></div>
+          <h3 class="font-semibold text-base">Imunisasi Anak</h3>
+          <p class="text-[12px] px-3 mt-1 text-gray-200 text-center">Setiap Kamis, pukul 09.00–11.00 WIB</p>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="carousel-card bg-[#2C122D] text-white w-52 h-64 rounded-2xl shadow-lg flex flex-col justify-center items-center">
+          <div class="bg-white w-24 h-24 rounded-lg mb-3"></div>
+          <h3 class="font-semibold text-base">Pelatihan Kader</h3>
+          <p class="text-[12px] px-3 mt-1 text-gray-200 text-center">Setiap Sabtu, pukul 09.00–12.00 WIB</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Script animasi -->
+<script>
+  // Animasi fade-in saat scroll
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('opacity-100', 'translate-y-0');
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in-scroll').forEach(el => {
+    el.classList.add('opacity-0', 'translate-y-6', 'transition-all', 'duration-1000');
+    observer.observe(el);
+  });
+
+  // Carousel 3 tampilan looping
+  const track = document.getElementById("carousel-track");
+  const cards = Array.from(track.children);
+  let activeIndex = 1; // mulai dari card ke-2 (tengah)
+  const total = cards.length;
+
+  function updateCarousel() {
+    cards.forEach((card, i) => {
+      const offset = (i - activeIndex + total) % total;
+      card.style.transition = "transform 0.8s ease, opacity 0.8s ease";
+      
+      if (offset === 0) {
+        card.style.transform = "translateX(-180px) scale(0.85)";
+        card.style.opacity = "0.6";
+        card.style.zIndex = "1";
+      } else if (offset === 1) {
+        card.style.transform = "translateX(0px) scale(1)";
+        card.style.opacity = "1";
+        card.style.zIndex = "5";
+      } else if (offset === 2) {
+        card.style.transform = "translateX(180px) scale(0.85)";
+        card.style.opacity = "0.6";
+        card.style.zIndex = "1";
+      } else {
+        card.style.transform = "translateX(600px) scale(0)";
+        card.style.opacity = "0";
+        card.style.zIndex = "0";
+      }
+    });
+  }
+
+  function nextCard() {
+    activeIndex = (activeIndex + 1) % total;
+    updateCarousel();
+  }
+
+  updateCarousel();
+  let interval = setInterval(nextCard, 2500);
+
+  track.addEventListener("mouseenter", () => clearInterval(interval));
+  track.addEventListener("mouseleave", () => interval = setInterval(nextCard, 2500));
+</script>
+
+  <!-- Kalimat Ajakan / Pengingat -->
+<section class="bg-white py-12 text-center border-2">
+  <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4"> Mari Bergabung dengan kami di Posyandu Kenanga </h2>
+  <p>
+    Posyandu hadir untuk membantu kesehatan ibu dan anak di lingkungan kita. <br>
+    Yuk, manfaatkan layanan rutin, imunisasi, dan penyuluhan gizi agar keluarga kita sehat dan kuat!
+  </p> 
+</section>
+
+
+<!-- Footer -->
+<footer class="bg-[#FFAEAE] text-[#3B1C32]">
+  <div class="container mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-2 gap-10">
+    <!-- Kolom 1 -->
+    <div class="flex flex-col">
+      <ul class="space-y-3 text-sm">
+        <div>
+          <h3 class="flex font-bold gap-2 text-2xl text-lg text-black mb-3">
+            <i class="fa-solid fa-bookmark text-2xl mt-1 text-[#3B1C32] w-6 h-6 flex items-center justify-center"></i> Media Sosial
+          </h3>
+        </div>
+        <li>
+          <a href="https://wa.me://+621217030602" class="flex items-center gap-2 hover:font-bold">
+            <i class="fa-brands fa-whatsapp bg-[#3B1C32] text-[#FFAEAE] w-6 h-6 flex items-center justify-center rounded"></i>
+            +62 123-4567-8900
+          </a>
+        </li>
+        <li>
+          <a href="#" target="_blank" class="flex items-center gap-2 hover:font-bold">
+            <i class="fa-brands fa-instagram bg-[#3B1C32] text-[#FFAEAE] w-6 h-6 flex items-center justify-center rounded"></i>
+            Instagram
+          </a>
+        </li>
+        <li>
+          <a href="#" target="_blank" class="flex items-center gap-2 hover:font-bold">
+            <i class="fa-brands fa-facebook bg-[#3B1C32] text-[#FFAEAE] w-6 h-6 flex items-center justify-center rounded"></i>
+            Facebook
+          </a>
+        </li>
+        <li>
+          <a href="#" target="_blank" class="flex items-center gap-2 hover:font-bold">
+            <i class="fa-brands fa-tiktok bg-[#3B1C32] text-[#FFAEAE] w-6 h-6 flex items-center justify-center rounded"></i>
+            TikTok
+          </a>
+        </li>
+      </ul>
+      <div>
+       <h3 class="flex font-bold gap-2 text-2xl text-lg text-black mb-3 mt-4">
+          <i class="fa-solid fa-chain text-2xl mt-1 text-[#3B1C32] w-6 h-6 flex items-center justify-center"></i> Tautan Cepat
+        </h3>
+      </div>
+      <ul class="space-y-2 text-sm text-gray-800">
+        <li><a href="#beranda" class="hover:font-bold">Beranda</a></li>
+        <li><a href="#program" class="hover:font-bold">Program</a></li>
+        <li><a href="#tentang" class="hover:font-bold">Tentang Kami</a></li>
+      </ul>
+    </div>
+
+    <!-- Kolom 3: Gambar/Logo -->
+    <div class="flex justify-center md:justify-end items-start">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.1278302294836!2d112.53772187416665!3d-7.881691692140732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7880d9122f91df%3A0x20a9f4a338c87229!2sKampung%20Ekologi%20Temas!5e0!3m2!1sid!2sid!4v1762089865508!5m2!1sid!2sid"
+        class="w-full md:w-[340px] h-[250px] rounded-lg border-2 border-yellow-400 shadow-lg"
+        allowfullscreen
+        loading="lazy"
+        aria-label="Peta lokasi"
+      ></iframe>
+    </div>
+  </div>
+
+  <!-- Kredit -->
+  <div class="text-center text-[13px] text-black font-semibold mt-4">
+    © By <span class="font-bold">Taqia Khoyyira Lubna</span>
+  </div>
+</footer>
+</body>
+</html>

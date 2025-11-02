@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tentang Posyandu</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+    .card { transition: all 0.4s ease; cursor: pointer; }
+    .card:hover { transform: scale(1.05); }
+    .shadow-deep { box-shadow: 0 15px 25px rgba(0,0,0,0.1); }
+
+    /* Hero Carousel */
+    .hero-slide { 
+      position: absolute; 
+      top:0; left:0; width:100%; height:100%; 
+      background-size: cover; 
+      background-position: center; 
+      opacity:0; 
+      transition: opacity 1s ease-in-out; 
+    }
+    .hero-slide.active { opacity:1; }
+  </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+  <!-- Navbar -->
+  <nav class="bg-[#FFAEAE] fixed top-0 left-0 w-full z-50 shadow-md">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+<!-- Logo -->
+<div class="flex items-center gap-2">
+  <img src="img/logo.png" class="bg-gray-900 w-12 h-12 rounded" alt="Logo Posyandu">
+  <div class="leading-tight">
+    <h1 class="font-bold text-[#3B1C32] text-lg">Posyandu</h1>
+    <p class="text-[11px] text-[#3B1C32] -mt-0.5">Pos Pelayanan Terpadu</p>
+  </div>
+</div>
+
+      <!-- Menu Desktop -->
+      <div class="hidden md:flex items-center gap-8 text-lg font-medium">
+        <ul class="hidden md:flex gap-10 text-lg font-medium absolute left-1/2 -translate-x-1/2">
+          <li>
+            <a href="Index.html" class="relative pb-1 after:content-[''] after:absolute after:left-0 after:bottom-0
+              after:w-0 after:h-[3px] after:bg-[#3B1C32] after:rounded-full hover:after:w-full after:transition-all after:duration-300">
+              Beranda
+            </a>
+          </li>
+          <li>
+            <a href="program.html" class="relative pb-1 after:content-[''] after:absolute after:left-0 after:bottom-0
+              after:w-0 after:h-[3px] after:bg-[#3B1C32] after:rounded-full hover:after:w-full after:transition-all after:duration-300">
+              Program
+            </a>
+          </li>
+          <li>
+            <a class="relative pb-1 after:content-[''] after:absolute after:left-0 after:bottom-0
+              after:w-0 after:h-[3px] after:bg-[#3B1C32] after:rounded-full hover:after:w-full after:transition-all after:duration-300 font-extrabold text-[#3B1C32]">
+              Tentang Kami
+            </a>
+          </li>
+        </ul>
+        <a href="https://wa.me/6281217030602" class="bg-[#FF7F7F] hover:bg-[#3B1C32] text-white px-5 py-2 rounded-md font-semibold text-[15px] transition">Hubungi Kami</a>
+      </div>
+
+      <!-- Mobile -->
+      <div class="flex items-center gap-x-4 md:hidden">
+        <a href="https://wa.me/6281217030602" class="bg-[#FF7F7F] hover:bg-[#3B1C32] text-white px-4 py-2 rounded-md font-semibold text-sm transition">Hubungi Kami</a>
+        <button id="menu-btn" class="text-3xl text-[#151624] focus:outline-none">☰</button>
+      </div>
+    </div>
+
+    <div id="menu" class="hidden md:hidden absolute top-20 right-6 bg-[#FFD1D1]/90 backdrop-blur-lg rounded-lg shadow-lg p-5 w-48 flex flex-col space-y-4 text-[#151624] font-medium transform transition-transform duration-300">
+      <a href="index.html" class="text-[#3B1C32] hover:text-[#e65b5b] font-semibold">Beranda</a>
+      <a href="program.html" class="text-black font-bold">Program</a>
+      <a href="about.html" class="text-[#3B1C32] hover:text-[#e65b5b] font-semibold">Tentang Kami</a>
+    </div>
+  </nav>
+
+  <script>
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+      btn.textContent = menu.classList.contains('hidden') ? '☰' : '✕';
+    });
+  </script>
+
+  <!-- Hero Carousel -->
+  <section class="relative h-[500px] mt-16 overflow-hidden">
+    <div class="hero-slide active" style="background-image: url('img/hero1.png');"></div>
+    <div class="hero-slide" style="background-image: url('img/hero2.png');"></div>
+    <div class="hero-slide" style="background-image: url('img/hero3.png');"></div>
+    <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-white px-4 text-center">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">Selamat Datang di Posyandu Kenanga</h1>
+      <p class="text-lg md:text-2xl">Layanan kesehatan untuk ibu dan anak, rutin dan terpercaya</p>
+    </div>
+  </section>
+
+  <script>
+    const slides = document.querySelectorAll('.hero-slide');
+    let current = 0;
+    setInterval(() => {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, 5000); // ganti tiap 5 detik
+  </script>
+
+  <!-- Tentang Kami -->
+  <section class="relative text-center py-16 px-6">
+    <div class="absolute inset-0 bg-gradient-to-b from-pink-200/40 to-transparent"></div>
+    <div class="relative max-w-3xl mx-auto">
+      <h2 class="text-4xl font-extrabold text-gray-900 mb-3">Tentang Kami</h2>
+      <p class="text-lg text-gray-700 mb-3">Mengenal lebih dekat dengan Posyandu Kenanga</p>
+      <p class="text-gray-600 leading-relaxed">
+        Posyandu Kenanga merupakan pusat pelayanan kesehatan berbasis masyarakat yang berfokus pada peningkatan gizi anak, 
+        kesehatan ibu hamil, serta pemberdayaan keluarga dalam menjaga kebersihan dan kesejahteraan lingkungan.
+      </p>
+    </div>
+  </section>
+
+  <!-- Visi -->
+  <section class="bg-gradient-to-br from-pink-100 to-pink-200 py-16 px-6 text-center shadow-inner">
+    <div class="max-w-3xl mx-auto bg-white/80 backdrop-blur-sm rounded-2xl shadow-md p-8">
+      <h2 class="text-3xl font-bold text-pink-700 mb-4">Visi Kami</h2>
+      <p class="text-gray-700 text-lg leading-relaxed italic">
+        “Mewujudkan masyarakat sehat, mandiri, dan bahagia melalui pelayanan kesehatan yang terjangkau, edukatif, dan berkelanjutan.”
+      </p>
+      <div class="mt-8 flex justify-center">
+        <div class="w-24 h-1 bg-pink-400 rounded-full"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Misi -->
+  <section class="bg-gradient-to-br from-pink-200 to-pink-300 py-16 px-6 text-center">
+    <div class="max-w-4xl mx-auto bg-white/80 backdrop-blur-sm rounded-2xl shadow-md p-8">
+      <h2 class="text-3xl font-bold text-pink-700 mb-6">Misi Kami</h2>
+      <ul class="text-gray-700 text-left md:text-center space-y-4 leading-relaxed">
+        <li>- Memberikan edukasi kesehatan ibu dan anak secara rutin dan menyeluruh.</li>
+        <li>- Meningkatkan partisipasi masyarakat dalam kegiatan Posyandu dan kebersamaan warga.</li>
+        <li>- Menanamkan budaya hidup bersih, sehat, dan penuh empati sejak usia dini.</li>
+        <li>- Mendorong inovasi pelayanan berbasis digital dan pemberdayaan kader Posyandu.</li>
+      </ul>
+      <div class="mt-10 flex justify-center">
+        <div class="w-20 h-1 bg-pink-400 rounded-full"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sejarah -->
+  <section class="bg-gradient-to-b from-pink-300 to-pink-400 py-16 px-6 text-center relative">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold mb-6 text-white drop-shadow">Sejarah</h2>
+      <p class="text-white/90 mb-10 leading-relaxed">
+        Posyandu Kenanga berdiri tahun <span class="font-semibold">2002</span> berawal dari keinginan warga RW 06 
+        untuk meningkatkan pelayanan kesehatan keluarga. Kini, Posyandu Kenanga menjadi contoh keberhasilan kolaborasi masyarakat dan pemerintah.
+      </p>
+      <div class="flex justify-center flex-wrap gap-6">
+        <div class="w-28 h-28 bg-white/90 border border-pink-200 rounded-xl shadow-md flex flex-col items-center justify-center hover:shadow-lg transition">
+          <span class="text-pink-600 font-bold text-xl">2002</span>
+          <p class="text-xs text-gray-600 mt-1">Awal Berdiri</p>
+        </div>
+        <div class="w-28 h-28 bg-white/90 border border-pink-200 rounded-xl shadow-md flex flex-col items-center justify-center hover:shadow-lg transition">
+          <span class="text-pink-600 font-bold text-xl">2015</span>
+          <p class="text-xs text-gray-600 mt-1">Perluasan Layanan</p>
+        </div>
+        <div class="w-28 h-28 bg-white/90 border border-pink-200 rounded-xl shadow-md flex flex-col items-center justify-center hover:shadow-lg transition">
+          <span class="text-pink-600 font-bold text-xl">2023</span>
+          <p class="text-xs text-gray-600 mt-1">Digitalisasi Data</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Motto -->
+  <section class="bg-gradient-to-r from-pink-100 to-pink-200 py-16 px-6 shadow-inner">
+    <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-center gap-10 text-center md:text-left">
+        <img src="img/logo.png" class="w-40 h-40"></img>
+      <div>
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Motto Kami</h2>
+        <p class="text-gray-700 leading-relaxed text-lg italic">
+          “Dengan cinta dan kepedulian, kami tumbuh bersama masyarakat untuk menciptakan kehidupan yang lebih sehat dan harmonis.”
+        </p>
+      </div>
+    </div>
+  </section>
+
+<!-- Footer -->
+<footer class="bg-[#FFAEAE] text-[#3B1C32]">
+  <div class="container mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-2 gap-10">
+    <div class="flex flex-col">
+      <ul class="space-y-3 text-sm">
+        <div>
+          <h3 class="flex font-bold gap-2 text-2xl text-lg text-black mb-3">
+            <i class="fa-solid fa-bookmark text-2xl mt-1 text-[#3B1C32] w-6 h-6 flex items-center justify-center"></i> Media Sosial
+          </h3>
+        </div>
+        <li>
+          <a href="https://wa.me://+621217030602" class="flex items-center gap-2 hover:font-bold">
+            <i class="fa-brands fa-whatsapp bg-[#3B1C32] text-[#FFAEAE] w-6 h-6 flex items-center justify-center rounded"></i>
+            +62 123-4567-8900
+          </a>
+        </li>
+        <li>
+          <a href="#" target="_blank" class="flex items-center gap-2 hover:font-bold">
+            <i class="fa-brands fa-instagram bg-[#3B1C32] text-[#FFAEAE] w-6 h-6 flex items-center justify-center rounded"></i>
+            Instagram
+          </a>
+        </li>
+        <li>
+          <a href="#" target="_blank" class="flex items-center gap-2 hover:font-bold">
+            <i class="fa-brands fa-facebook bg-[#3B1C32] text-[#FFAEAE] w-6 h-6 flex items-center justify-center rounded"></i>
+            Facebook
+          </a>
+        </li>
+        <li>
+          <a href="#" target="_blank" class="flex items-center gap-2 hover:font-bold">
+            <i class="fa-brands fa-tiktok bg-[#3B1C32] text-[#FFAEAE] w-6 h-6 flex items-center justify-center rounded"></i>
+            TikTok
+          </a>
+        </li>
+      </ul>
+      <div>
+       <h3 class="flex font-bold gap-2 text-2xl text-lg text-black mb-3 mt-4">
+          <i class="fa-solid fa-chain text-2xl mt-1 text-[#3B1C32] w-6 h-6 flex items-center justify-center"></i> Tautan Cepat
+        </h3>
+      </div>
+      <ul class="space-y-2 text-sm text-gray-800">
+        <li><a href="Index.html" class="hover:font-bold">Beranda</a></li>
+        <li><a href="program.html" class="hover:font-bold">Program</a></li>
+        <li><a class="font-bold">Tentang Kami</a></li>
+      </ul>
+    </div>
+
+    <div class="flex justify-center md:justify-end items-start">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.1278302294836!2d112.53772187416665!3d-7.881691692140732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7880d9122f91df%3A0x20a9f4a338c87229!2sKampung%20Ekologi%20Temas!5e0!3m2!1sid!2sid!4v1762089865508!5m2!1sid!2sid"
+        class="w-full md:w-[340px] h-[250px] rounded-lg border-2 border-yellow-400 shadow-lg"
+        allowfullscreen
+        loading="lazy"
+        aria-label="Peta lokasi"
+      ></iframe>
+    </div>
+  </div>
+
+  <div class="text-center text-[13px] text-black font-semibold mt-4">
+    © By <span class="font-bold">Taqia Khoyyira Lubna</span>
+  </div>
+</footer>
+</body>
+</html>
