@@ -64,7 +64,7 @@
     </ul>
 
       <!-- Tombol Hubungi Kami (desktop) -->
-      <a href="https://wa.me/6281217030602"
+      <a href="https://wa.me/+628563906070"
          class="bg-[#FF7F7F] hover:bg-[#3B1C32] text-white px-5 py-2 rounded-md font-semibold text-[15px] transition">
         Hubungi Kami
       </a>
@@ -72,7 +72,7 @@
 
     <!-- Tombol Mobile (Hubungi + Hamburger) -->
     <div class="flex items-center gap-x-4 md:hidden">
-      <a href="https://wa.me/6281217030602"
+      <a href="https://wa.me/+628563906070"
          class="bg-[#FF7F7F] hover:bg-[#3B1C32] text-white px-4 py-2 rounded-md font-semibold text-sm transition">
         Hubungi Kami
       </a>
@@ -107,6 +107,7 @@
     }
   });
 </script>
+
 
 <!-- Hero Carousel -->
 <div class="relative h-[500px] w-full overflow-hidden">
@@ -209,7 +210,7 @@
 </style>
 </section>
 
-<!-- Struktur Kepengurusan -->
+<!-- ====== Struktur Kepengurusan (dengan tombol panah) ====== -->
 <section class="bg-[#f8bebe] py-16 text-center overflow-hidden">
   <h2 class="text-3xl font-bold text-gray-900 mb-3">Struktur Kepengurusan</h2>
   <p class="max-w-2xl mx-auto text-gray-700 text-[15px] mb-12 px-4">
@@ -219,14 +220,14 @@
 
   <div class="flex flex-col md:flex-row justify-center items-stretch gap-10 px-6">
     <!-- Ketua Card -->
-    <div
-      class="bg-[#2C122D] text-white rounded-2xl p-6 w-full md:w-80 shadow-lg transition-all duration-700 ease-out animate-fadeUp flex flex-col justify-between"
-    >
+    <div class="bg-[#2C122D] text-white rounded-2xl p-6 w-full md:w-80 shadow-lg transition-all duration-700 ease-out animate-fadeUp flex flex-col justify-between">
+      <h3 class="text-center font-semibold mb-4 uppercase text-sm tracking-wider">
+        Ketua Posyandu
+      </h3>
+      <div class="bg-white w-28 h-36 mx-auto rounded-md border border-gray-300 mb-4 flex justify-center items-center">
+          <i class="fa-solid fa-user text-gray-400 text-6xl"></i>
+      </div>
       <div>
-        <h3 class="text-center font-semibold mb-4 uppercase text-sm tracking-wider">
-          Ketua Posyandu
-        </h3>
-        <div class="bg-white w-28 h-36 mx-auto rounded-md border border-gray-300 mb-4"></div>
         <p class="text-center text-sm font-semibold mb-2">Rahma Sari</p>
         <p class="text-[13px] text-justify leading-relaxed opacity-90">
           “Posyandu bukan hanya tempat pelayanan, tetapi juga wadah kebersamaan dan edukasi bagi kita semua.
@@ -235,19 +236,39 @@
       </div>
     </div>
 
-    <!-- Staff & Petugas Carousel -->
+    <!-- Staff & Petugas Carousel (dengan panah) -->
     <div
-      class="bg-[#2C122D] text-white rounded-2xl p-6 w-full md:w-80 shadow-lg transition-all duration-700 ease-out animate-fadeUp delay-200 flex flex-col justify-between relative"
+      class="bg-[#2C122D] text-white rounded-2xl p-6 w-full md:w-96 shadow-lg transition-all duration-700 ease-out animate-fadeUp delay-200 flex flex-col justify-between relative"
     >
       <div>
         <h3 class="text-center font-semibold mb-4 uppercase text-sm tracking-wider">
           Staff & Petugas
         </h3>
+
+        <!-- Carousel wrapper -->
         <div id="staffCarousel" class="relative w-full overflow-hidden rounded-md">
-          <div class="carousel-track flex transition-transform duration-700 ease-in-out">
+          <!-- Arrows -->
+          <button id="staffPrev" aria-label="Previous staff" class="absolute left-3 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-white/20 text-white rounded-full p-2 shadow-md">
+            <!-- left arrow -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          <button id="staffNext" aria-label="Next staff" class="absolute right-3 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-white/20 text-white rounded-full p-2 shadow-md">
+            <!-- right arrow -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+
+          <!-- Track -->
+          <div class="carousel-track flex transition-transform duration-700 ease-in-out will-change-transform">
             <!-- Slide 1 -->
-            <div class="slide flex-shrink-0 w-full">
-              <div class="bg-white w-28 h-36 mx-auto rounded-md border border-gray-300 mb-4"></div>
+            <div class="slide flex-shrink-0 w-full md:w-80 px-4 box-border">
+              <div class="bg-white w-28 h-36 mx-auto rounded-md border border-gray-300 mb-4 flex justify-center items-center">
+                <i class="fa-solid fa-user text-gray-400 text-6xl"></i>
+              </div>
               <p class="text-center text-sm font-semibold mb-2">Siti Rahmawati</p>
               <p class="text-[13px] text-justify leading-relaxed opacity-90">
                 Bertugas di bagian pencatatan dan pendataan tumbuh kembang balita serta membantu kegiatan imunisasi. 
@@ -256,8 +277,10 @@
             </div>
 
             <!-- Slide 2 -->
-            <div class="slide flex-shrink-0 w-full">
-              <div class="bg-white w-28 h-36 mx-auto rounded-md border border-gray-300 mb-4"></div>
+            <div class="slide flex-shrink-0 w-full md:w-80 px-4 box-border">
+              <div class="bg-white w-28 h-36 mx-auto rounded-md border border-gray-300 mb-4 flex justify-center items-center">
+                <i class="fa-solid fa-user text-gray-400 text-6xl"></i>
+              </div>
               <p class="text-center text-sm font-semibold mb-2">Dwi Lestari</p>
               <p class="text-[13px] text-justify leading-relaxed opacity-90">
                 Menangani penyuluhan gizi dan memberikan edukasi kepada ibu-ibu terkait pola makan sehat,
@@ -266,177 +289,215 @@
             </div>
 
             <!-- Slide 3 -->
-            <div class="slide flex-shrink-0 w-full">
-              <div class="bg-white w-28 h-36 mx-auto rounded-md border border-gray-300 mb-4"></div>
+            <div class="slide flex-shrink-0 w-full md:w-80 px-4 box-border">
+              <div class="bg-white w-28 h-36 mx-auto rounded-md border border-gray-300 mb-4 flex justify-center items-center">
+                <i class="fa-solid fa-user text-gray-400 text-6xl"></i>      
+              </div>
               <p class="text-center text-sm font-semibold mb-2">Nur Aini</p>
               <p class="text-[13px] text-justify leading-relaxed opacity-90">
                 Membantu pelaksanaan program keluarga berencana dan pelayanan kesehatan masyarakat. 
                 Nur juga aktif dalam mengoordinasikan jadwal kegiatan rutin posyandu bersama tim.
               </p>
             </div>
-           </div>
-          </div>
-        </div>
+          </div> 
+        </div> 
       </div>
     </div>
   </div>
-  </section>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const carousel = document.getElementById("staffCarousel");
+  const track = carousel.querySelector(".carousel-track");
+  const slides = Array.from(track.children);
+  const nextButton = document.getElementById("staffNext");
+  const prevButton = document.getElementById("staffPrev");
+  let currentIndex = 0;
+  let intervalId;
 
-  <!-- Animasi Fade -->
-  <style>
-  @keyframes fadeUp {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  // Pastikan lebar track sesuai jumlah slide
+  function updateSlideWidth() {
+    const carouselWidth = carousel.clientWidth;
+    slides.forEach(slide => {
+      slide.style.width = `${carouselWidth}px`;
+    });
   }
-  .animate-fadeUp {
-    animation: fadeUp 1s ease forwards;
+
+  // Update posisi
+  function updateCarousel() {
+    const offset = -currentIndex * carousel.clientWidth;
+    track.style.transform = `translateX(${offset}px)`;
   }
-  .delay-200 {
-    animation-delay: 0.2s;
+
+  // Auto slide
+  function startAutoSlide() {
+    clearInterval(intervalId);
+    intervalId = setInterval(() => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateCarousel();
+    }, 4000);
   }
-  </style>
-  <script>
-  const carousel = document.querySelector('#staffCarousel .carousel-track');
-  const slides = document.querySelectorAll('#staffCarousel .slide');
-  let index = 0;
-  let interval;
 
-  const startCarousel = () => {
-    interval = setInterval(() => {
-      index = (index + 1) % slides.length;
-      carousel.style.transform = `translateX(-${index * 100}%)`;
-    }, 5500); // jeda baca lebih panjang
-  };
+  function stopAutoSlide() {
+    clearInterval(intervalId);
+  }
 
-  const stopCarousel = () => clearInterval(interval);
+  // Tombol navigasi
+  nextButton.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateCarousel();
+    startAutoSlide();
+  });
 
-  startCarousel();
+  prevButton.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateCarousel();
+    startAutoSlide();
+  });
 
-  const container = document.getElementById('staffCarousel');
-  container.addEventListener('mouseenter', stopCarousel);
-  container.addEventListener('mouseleave', startCarousel);
-  </script>
+  // Pause saat hover
+  carousel.addEventListener("mouseenter", stopAutoSlide);
+  carousel.addEventListener("mouseleave", startAutoSlide);
 
-<!-- Jadwal Layanan -->
-<section id="jadwal" class="bg-[#FF9C9C] py-16 text-center relative overflow-hidden">
+  // Handle resize biar tetap pas
+  window.addEventListener("resize", () => {
+    updateSlideWidth();
+    updateCarousel();
+  });
+
+  // Inisialisasi
+  updateSlideWidth();
+  updateCarousel();
+  startAutoSlide();
+});
+</script>
+</section>
+
+<!-- ===== JADWAL LAYANAN ===== -->
+<section id="jadwal" class="bg-[#FF9C9C] py-16 text-center relative overflow-visible">
   <div class="container mx-auto px-6">
-    <!-- Judul -->
-    <h2 class="text-4xl font-extrabold text-[#2C122D] mb-3 fade-in-scroll">
-      Jadwal Layanan
-    </h2>
-
-    <!-- Deskripsi -->
-    <p class="max-w-2xl mx-auto text-gray-700 text-base leading-relaxed mb-12 fade-in-scroll">
+    <h2 class="text-4xl font-extrabold text-[#2C122D] mb-3">Jadwal Layanan</h2>
+    <p class="max-w-2xl mx-auto text-gray-700 text-base leading-relaxed mb-12">
       Posyandu menyelenggarakan berbagai layanan kesehatan masyarakat secara rutin, 
-      mulai dari pemeriksaan balita, ibu hamil, hingga penyuluhan gizi. 
+      mulai dari pemeriksaan balita, remaja, lansia, hingga penyuluhan gizi. 
       Berikut jadwal kegiatan yang dapat Anda ikuti.
     </p>
 
-    <!-- Carousel -->
-    <div class="relative w-full flex justify-center items-center overflow-hidden" id="carousel">
-      <div class="flex items-center justify-center gap-8 transition-transform duration-700 ease-in-out" id="carousel-track">
-        <!-- Card 1 -->
-        <div class="carousel-card bg-[#2C122D] text-white w-52 h-64 rounded-2xl shadow-lg flex flex-col justify-center items-center">
-          <div class="bg-white w-24 h-24 rounded-lg mb-3"></div>
-          <h3 class="font-semibold text-base">Pemeriksaan Balita</h3>
-          <p class="text-[12px] px-3 mt-1 text-gray-200 text-center">Setiap Senin, pukul 08.00–11.00 WIB</p>
-        </div>
+    <!-- Wrapper utama dengan panah -->
+    <div class="relative flex justify-center items-center px-10 overflow-visible">
+      <!-- Tombol kiri -->
+      <button id="prevJadwal" class="absolute left-0 bg-[#2C122D]/20 hover:bg-[#2C122D]/40 text-[#2C122D] p-3 rounded-full shadow-md transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
 
-        <!-- Card 2 -->
-        <div class="carousel-card bg-[#2C122D] text-white w-52 h-64 rounded-2xl shadow-lg flex flex-col justify-center items-center">
-          <div class="bg-white w-24 h-24 rounded-lg mb-3"></div>
-          <h3 class="font-semibold text-base">Ibu Hamil & Menyusui</h3>
-          <p class="text-[12px] px-3 mt-1 text-gray-200 text-center">Setiap Rabu, pukul 09.00–12.00 WIB</p>
-        </div>
+      <!-- Carousel Container -->
+      <div id="jadwalCarousel" class="relative flex justify-center items-center h-[280px] w-full"></div>
 
-        <!-- Card 3 -->
-        <div class="carousel-card bg-[#2C122D] text-white w-52 h-64 rounded-2xl shadow-lg flex flex-col justify-center items-center">
-          <div class="bg-white w-24 h-24 rounded-lg mb-3"></div>
-          <h3 class="font-semibold text-base">Penyuluhan Gizi</h3>
-          <p class="text-[12px] px-3 mt-1 text-gray-200 text-center">Setiap Jumat, pukul 08.30–10.30 WIB</p>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="carousel-card bg-[#2C122D] text-white w-52 h-64 rounded-2xl shadow-lg flex flex-col justify-center items-center">
-          <div class="bg-white w-24 h-24 rounded-lg mb-3"></div>
-          <h3 class="font-semibold text-base">Imunisasi Anak</h3>
-          <p class="text-[12px] px-3 mt-1 text-gray-200 text-center">Setiap Kamis, pukul 09.00–11.00 WIB</p>
-        </div>
-
-        <!-- Card 5 -->
-        <div class="carousel-card bg-[#2C122D] text-white w-52 h-64 rounded-2xl shadow-lg flex flex-col justify-center items-center">
-          <div class="bg-white w-24 h-24 rounded-lg mb-3"></div>
-          <h3 class="font-semibold text-base">Pelatihan Kader</h3>
-          <p class="text-[12px] px-3 mt-1 text-gray-200 text-center">Setiap Sabtu, pukul 09.00–12.00 WIB</p>
-        </div>
-      </div>
+      <!-- Tombol kanan -->
+      <button id="nextJadwal" class="absolute right-0 bg-[#2C122D]/20 hover:bg-[#2C122D]/40 text-[#2C122D] p-3 rounded-full shadow-md transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
     </div>
   </div>
 </section>
 
-<!-- Script animasi -->
 <script>
-  // Animasi fade-in saat scroll
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('opacity-100', 'translate-y-0');
-    });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fade-in-scroll').forEach(el => {
-    el.classList.add('opacity-0', 'translate-y-6', 'transition-all', 'duration-1000');
-    observer.observe(el);
+// ==== DATA JADWAL ====
+const jadwalData = [
+  { title: "Pemeriksaan pada Balita", time: "Setiap Sabtu, 08.00–09.00 WIB", icon: "fa-baby" },
+  { title: "Pemeriksaan pada Remaja", time: "Setiap Sabtu, 09.30–10.30 WIB", icon: "fa-user-graduate" },
+  { title: "Penyuluhan Gizi", time: "Setiap Sabtu, 10.00–11.00 WIB", icon: "fa-apple-alt" },
+  { title: "Imunisasi Anak", time: "Setiap Sabtu, 08.30–10.00 WIB", icon: "fa-syringe" },
+  { title: "Pemeriksaan pada Lansia", time: "Setiap Sabtu, 11.00–12.00 WIB", icon: "fa-person-cane" },
+];
+
+const jadwalContainer = document.getElementById("jadwalCarousel");
+
+// ==== GENERATE CARD ====
+jadwalData.forEach(j => {
+  const card = document.createElement("div");
+  card.className = "carousel-card bg-[#2C122D] text-white w-52 h-64 rounded-2xl shadow-lg flex flex-col justify-center items-center transition-all duration-700 ease-out";
+  card.innerHTML = `
+    <div class="bg-white w-20 h-20 rounded-xl mb-3 flex justify-center items-center shadow-inner">
+      <i class="fa-solid ${j.icon} text-[#2C122D] text-3xl"></i>
+    </div>
+    <h3 class="font-semibold text-base">${j.title}</h3>
+    <p class="text-[12px] px-3 mt-1 text-gray-200 text-center">${j.time}</p>
+  `;
+  jadwalContainer.appendChild(card);
+});
+
+const jadwalCards = Array.from(jadwalContainer.children);
+let activeJadwal = 1;
+const totalJadwal = jadwalCards.length;
+
+// ==== POSISI & ANIMASI ====
+function updateJadwalCarousel() {
+  jadwalCards.forEach((card, i) => {
+    const offset = (i - activeJadwal + totalJadwal) % totalJadwal;
+    card.style.position = "absolute";
+    card.style.transition = "all 1s ease";
+
+    if (offset === 0) {
+      card.style.transform = "translateX(-220px) scale(0.8)";
+      card.style.opacity = "0.5";
+      card.style.zIndex = "1";
+    } else if (offset === 1) {
+      card.style.transform = "translateX(0) scale(1.1)";
+      card.style.opacity = "1";
+      card.style.zIndex = "5";
+    } else if (offset === 2) {
+      card.style.transform = "translateX(220px) scale(0.8)";
+      card.style.opacity = "0.5";
+      card.style.zIndex = "1";
+    } else {
+      card.style.transform = "translateX(600px) scale(0)";
+      card.style.opacity = "0";
+      card.style.zIndex = "0";
+    }
   });
+}
 
-  // Carousel 3 tampilan looping
-  const track = document.getElementById("carousel-track");
-  const cards = Array.from(track.children);
-  let activeIndex = 1; // mulai dari card ke-2 (tengah)
-  const total = cards.length;
+updateJadwalCarousel();
 
-  function updateCarousel() {
-    cards.forEach((card, i) => {
-      const offset = (i - activeIndex + total) % total;
-      card.style.transition = "transform 0.8s ease, opacity 0.8s ease";
-      
-      if (offset === 0) {
-        card.style.transform = "translateX(-180px) scale(0.85)";
-        card.style.opacity = "0.6";
-        card.style.zIndex = "1";
-      } else if (offset === 1) {
-        card.style.transform = "translateX(0px) scale(1)";
-        card.style.opacity = "1";
-        card.style.zIndex = "5";
-      } else if (offset === 2) {
-        card.style.transform = "translateX(180px) scale(0.85)";
-        card.style.opacity = "0.6";
-        card.style.zIndex = "1";
-      } else {
-        card.style.transform = "translateX(600px) scale(0)";
-        card.style.opacity = "0";
-        card.style.zIndex = "0";
-      }
-    });
-  }
+// ==== AUTO ROTATE ====
+function startJadwalRotation() {
+  return setInterval(() => {
+    activeJadwal = (activeJadwal + 1) % totalJadwal;
+    updateJadwalCarousel();
+  }, 7000);
+}
 
-  function nextCard() {
-    activeIndex = (activeIndex + 1) % total;
-    updateCarousel();
-  }
+let jadwalInterval = startJadwalRotation();
 
-  updateCarousel();
-  let interval = setInterval(nextCard, 2500);
+// ==== PAUSE SAAT HOVER ====
+jadwalCards.forEach(card => {
+  card.addEventListener("mouseenter", () => clearInterval(jadwalInterval));
+});
+jadwalContainer.addEventListener("mouseleave", () => {
+  jadwalInterval = startJadwalRotation();
+});
 
-  track.addEventListener("mouseenter", () => clearInterval(interval));
-  track.addEventListener("mouseleave", () => interval = setInterval(nextCard, 2500));
+// ==== PANAH KIRI & KANAN ====
+document.getElementById("nextJadwal").addEventListener("click", () => {
+  activeJadwal = (activeJadwal + 1) % totalJadwal;
+  updateJadwalCarousel();
+  clearInterval(jadwalInterval);
+  jadwalInterval = startJadwalRotation();
+});
+
+document.getElementById("prevJadwal").addEventListener("click", () => {
+  activeJadwal = (activeJadwal - 1 + totalJadwal) % totalJadwal;
+  updateJadwalCarousel();
+  clearInterval(jadwalInterval);
+  jadwalInterval = startJadwalRotation();
+});
 </script>
 
-  <!-- Kalimat Ajakan / Pengingat -->
+<!-- Kalimat Ajakan / Pengingat -->
 <section class="bg-white py-12 text-center border-2">
   <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4"> Mari Bergabung dengan kami di Posyandu Kenanga </h2>
   <p>
@@ -444,7 +505,6 @@
     Yuk, manfaatkan layanan rutin, imunisasi, dan penyuluhan gizi agar keluarga kita sehat dan kuat!
   </p> 
 </section>
-
 
 <!-- Footer -->
 <footer class="bg-[#FFAEAE] text-[#3B1C32]">
@@ -507,6 +567,7 @@
 </footer>
 </body>
 </html>
+
 
 
 
