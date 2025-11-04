@@ -378,40 +378,40 @@
 </section>
 
 <!-- ===== JADWAL LAYANAN ===== -->
-<section id="jadwal" class="bg-[#FF9C9C] py-16 text-center relative overflow-visible">
-  <div class="container mx-auto px-6">
-    <h2 class="text-4xl font-extrabold text-[#2C122D] mb-3">Jadwal Layanan</h2>
-    <p class="max-w-2xl mx-auto text-gray-700 text-base leading-relaxed mb-12">
+<section id="jadwal" class="bg-[#FF9C9C] py-16 text-center relative overflow-hidden">
+  <div class="container mx-auto px-4 sm:px-6">
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-[#2C122D] mb-3">Jadwal Layanan</h2>
+    <p class="max-w-2xl mx-auto text-gray-700 text-sm sm:text-base leading-relaxed mb-12">
       Posyandu menyelenggarakan berbagai layanan kesehatan masyarakat secara rutin, 
       mulai dari pemeriksaan balita, remaja, lansia, hingga penyuluhan gizi. 
       Berikut jadwal kegiatan yang dapat Anda ikuti.
     </p>
 
     <!-- Wrapper utama -->
-    <div class="relative flex justify-center items-center px-6 md:px-10 overflow-visible select-none">
+    <div class="relative flex justify-center items-center overflow-visible select-none">
       <!-- Tombol kiri -->
       <button 
         id="prevJadwal"
-        class="absolute left-2 md:left-0 z-50 bg-[#2C122D]/30 hover:bg-[#2C122D]/50 text-[#2C122D] p-3 rounded-full shadow-md transition active:scale-90 focus:outline-none"
+        class="absolute left-2 sm:left-4 z-50 bg-[#2C122D]/60 hover:bg-[#2C122D]/80 text-white p-3 sm:p-4 rounded-full shadow-lg transition active:scale-90 focus:outline-none"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 md:w-6 md:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7" />
         </svg>
       </button>
 
       <!-- Carousel Container -->
       <div 
         id="jadwalCarousel"
-        class="relative flex justify-center items-center h-[260px] w-full pointer-events-none"
+        class="relative flex justify-center items-center h-[250px] sm:h-[280px] w-full pointer-events-none"
       ></div>
 
       <!-- Tombol kanan -->
       <button 
         id="nextJadwal"
-        class="absolute right-2 md:right-0 z-50 bg-[#2C122D]/30 hover:bg-[#2C122D]/50 text-[#2C122D] p-3 rounded-full shadow-md transition active:scale-90 focus:outline-none"
+        class="absolute right-2 sm:right-4 z-50 bg-[#2C122D]/60 hover:bg-[#2C122D]/80 text-white p-3 sm:p-4 rounded-full shadow-lg transition active:scale-90 focus:outline-none"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 md:w-6 md:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
         </svg>
       </button>
     </div>
@@ -421,11 +421,11 @@
 <script>
 // ==== DATA JADWAL ====
 const jadwalData = [
-  { title: "Pemeriksaan pada Balita", time: "Setiap Sabtu, 08.00–09.00 WIB", icon: "fa-baby" },
-  { title: "Pemeriksaan pada Remaja", time: "Setiap Sabtu, 09.30–10.30 WIB", icon: "fa-user-graduate" },
+  { title: "Pemeriksaan Balita", time: "Setiap Sabtu, 08.00–09.00 WIB", icon: "fa-baby" },
+  { title: "Pemeriksaan Remaja", time: "Setiap Sabtu, 09.30–10.30 WIB", icon: "fa-user-graduate" },
   { title: "Penyuluhan Gizi", time: "Setiap Sabtu, 10.00–11.00 WIB", icon: "fa-apple-alt" },
   { title: "Imunisasi Anak", time: "Setiap Sabtu, 08.30–10.00 WIB", icon: "fa-syringe" },
-  { title: "Pemeriksaan pada Lansia", time: "Setiap Sabtu, 11.00–12.00 WIB", icon: "fa-person-cane" },
+  { title: "Pemeriksaan Lansia", time: "Setiap Sabtu, 11.00–12.00 WIB", icon: "fa-person-cane" },
 ];
 
 const jadwalContainer = document.getElementById("jadwalCarousel");
@@ -434,17 +434,15 @@ const jadwalContainer = document.getElementById("jadwalCarousel");
 jadwalData.forEach(j => {
   const card = document.createElement("div");
   card.className =
-    "carousel-card bg-[#2C122D] text-white w-44 h-56 md:w-52 md:h-64 rounded-2xl shadow-lg flex flex-col justify-center items-center transition-all duration-700 ease-out";
+    "carousel-card bg-[#2C122D] text-white w-36 h-48 sm:w-48 sm:h-60 rounded-2xl shadow-lg flex flex-col justify-center items-center transition-all duration-700 ease-out";
   card.innerHTML = `
-    <div class="bg-white w-16 h-16 md:w-20 md:h-20 rounded-xl mb-3 flex justify-center items-center shadow-inner">
-      <i class="fa-solid ${j.icon} text-[#2C122D] text-2xl md:text-3xl"></i>
+    <div class="bg-white w-14 h-14 sm:w-16 sm:h-16 rounded-xl mb-3 flex justify-center items-center shadow-inner">
+      <i class="fa-solid ${j.icon} text-[#2C122D] text-xl sm:text-2xl"></i>
     </div>
-    <h3 class="font-semibold text-sm md:text-base">${j.title}</h3>
-    <p class="text-[11px] md:text-[12px] px-3 mt-1 text-gray-200 text-center">${j.time}</p>
+    <h3 class="font-semibold text-xs sm:text-sm px-2">${j.title}</h3>
+    <p class="text-[10px] sm:text-[12px] px-3 mt-1 text-gray-200 text-center">${j.time}</p>
   `;
   jadwalContainer.appendChild(card);
-
-  // Tambahkan pointer agar bisa hover, tapi tidak menghalangi tombol panah
   card.style.pointerEvents = "auto";
 });
 
@@ -455,26 +453,26 @@ const totalJadwal = jadwalCards.length;
 // ==== POSISI & ANIMASI RESPONSIF ====
 function updateJadwalCarousel() {
   const screenWidth = window.innerWidth;
-  const centerOffset = screenWidth < 640 ? 140 : 220; // jarak antar card
+  const gap = screenWidth < 640 ? 110 : 180; // jarak antar card
   jadwalCards.forEach((card, i) => {
     const offset = (i - activeJadwal + totalJadwal) % totalJadwal;
     card.style.position = "absolute";
     card.style.transition = "all 0.8s ease";
 
     if (offset === 0) {
-      card.style.transform = `translateX(-${centerOffset}px) scale(0.8)`;
-      card.style.opacity = "0.5";
+      card.style.transform = `translateX(-${gap}px) scale(0.8)`;
+      card.style.opacity = "0.4";
       card.style.zIndex = "1";
     } else if (offset === 1) {
       card.style.transform = "translateX(0) scale(1.05)";
       card.style.opacity = "1";
       card.style.zIndex = "5";
     } else if (offset === 2) {
-      card.style.transform = `translateX(${centerOffset}px) scale(0.8)`;
-      card.style.opacity = "0.5";
+      card.style.transform = `translateX(${gap}px) scale(0.8)`;
+      card.style.opacity = "0.4";
       card.style.zIndex = "1";
     } else {
-      card.style.transform = `translateX(${centerOffset * 3}px) scale(0)`;
+      card.style.transform = `translateX(${gap * 3}px) scale(0)`;
       card.style.opacity = "0";
       card.style.zIndex = "0";
     }
@@ -516,7 +514,7 @@ document.getElementById("prevJadwal").addEventListener("click", () => {
   jadwalInterval = startJadwalRotation();
 });
 </script>
-
+    
 <!-- Kalimat Ajakan / Pengingat -->
 <section class="bg-white py-12 text-center border-t-2 border-[#FF9C9C]">
   <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
@@ -589,3 +587,4 @@ document.getElementById("prevJadwal").addEventListener("click", () => {
 </footer>
 </body>
 </html>
+
