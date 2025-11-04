@@ -21,47 +21,47 @@
   </head>
 
   <body class="bg-gray-100 text-gray-800">
-<!-- Navbar -->
-<nav class="bg-[#FFAEAE] fixed top-0 left-0 w-full z-50 shadow-md">
-  <div class="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 py-3 sm:py-4">
+  <!-- Navbar -->
+  <nav class="bg-[#FFAEAE] fixed top-0 left-0 w-full z-50 shadow-md">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
     
-    <!-- Logo -->
-    <div class="flex items-center gap-2">
-      <img src="img/logo.png" class="bg-gray-900 w-10 h-10 sm:w-12 sm:h-12 rounded" alt="Logo Posyandu">
-      <div class="leading-tight">
-        <h1 class="font-bold text-[#3B1C32] text-base sm:text-lg">Posyandu</h1>
-        <p class="text-[10px] sm:text-[11px] text-[#3B1C32] -mt-0.5">Pos Pelayanan Terpadu</p>
-      </div>
-    </div>
+<!-- Logo -->
+<div class="flex items-center gap-2">
+  <img src="img/logo.png" class="bg-gray-900 w-12 h-12 rounded" alt="Logo Posyandu">
+  <div class="leading-tight">
+    <h1 class="font-bold text-[#3B1C32] text-lg">Posyandu</h1>
+    <p class="text-[11px] text-[#3B1C32] -mt-0.5">Pos Pelayanan Terpadu</p>
+  </div>
+</div>
 
     <!-- Menu Desktop -->
     <div class="hidden md:flex items-center gap-8 text-lg font-medium">
       <!-- Tengah: Menu -->
-      <ul class="flex gap-10 text-lg font-medium absolute left-1/2 -translate-x-1/2">
-        <li>
-          <a class="relative pb-1 after:content-[''] after:absolute after:left-0 after:bottom-0
-                    after:w-0 after:h-[3px] after:bg-[#3B1C32] after:rounded-full
-                    hover:after:w-full after:transition-all after:duration-300 font-extrabold text-[#3B1C32]">
-            Beranda
-          </a>
-        </li>
-        <li>
-          <a href="program.html"
-             class="relative pb-1 after:content-[''] after:absolute after:left-0 after:bottom-0
-                    after:w-0 after:h-[3px] after:bg-[#3B1C32] after:rounded-full
-                    hover:after:w-full after:transition-all after:duration-300">
-            Program
-          </a>
-        </li>
-        <li>
-          <a href="about.html"
-             class="relative pb-1 after:content-[''] after:absolute after:left-0 after:bottom-0
-                    after:w-0 after:h-[3px] after:bg-[#3B1C32] after:rounded-full
-                    hover:after:w-full after:transition-all after:duration-300">
-            Tentang Kami
-          </a>
-        </li>
-      </ul>
+    <ul class="hidden md:flex gap-10 text-lg font-medium absolute left-1/2 -translate-x-1/2">
+      <li>
+        <a class="relative pb-1 after:content-[''] after:absolute after:left-0 after:bottom-0
+                  after:w-0 after:h-[3px] after:bg-[#3B1C32] after:rounded-full
+                  hover:after:w-full after:transition-all after:duration-300 font-extrabold text-[#3B1C32]">
+          Beranda
+        </a>
+      </li>
+      <li>
+        <a href="program.html"
+           class="relative pb-1 after:content-[''] after:absolute after:left-0 after:bottom-0
+                  after:w-0 after:h-[3px] after:bg-[#3B1C32] after:rounded-full
+                  hover:after:w-full after:transition-all after:duration-300">
+          Program
+        </a>
+      </li>
+      <li>
+        <a href="about.html"
+           class="relative pb-1 after:content-[''] after:absolute after:left-0 after:bottom-0
+                  after:w-0 after:h-[3px] after:bg-[#3B1C32] after:rounded-full
+                  hover:after:w-full after:transition-all after:duration-300">
+          Tentang Kami
+        </a>
+      </li>
+    </ul>
 
       <!-- Tombol Hubungi Kami (desktop) -->
       <a href="https://wa.me/+628563906070"
@@ -71,23 +71,22 @@
     </div>
 
     <!-- Tombol Mobile (Hubungi + Hamburger) -->
-    <div class="flex items-center gap-x-3 md:hidden">
+    <div class="flex items-center gap-x-4 md:hidden">
       <a href="https://wa.me/+628563906070"
-         class="bg-[#FF7F7F] hover:bg-[#3B1C32] text-white px-4 py-2 rounded-md font-semibold text-sm transition whitespace-nowrap">
+         class="bg-[#FF7F7F] hover:bg-[#3B1C32] text-white px-4 py-2 rounded-md font-semibold text-sm transition">
         Hubungi Kami
       </a>
-      <button id="menu-btn" class="text-3xl text-[#3B1C32] focus:outline-none">☰</button>
+      <button id="menu-btn" class="text-3xl text-[#151624] focus:outline-none">☰</button>
     </div>
   </div>
 
   <!-- Menu Mobile -->
-  <div id="menu"
-       class="hidden md:hidden fixed top-[68px] left-0 w-full bg-[#FFD1D1]/95 backdrop-blur-lg
-              border-t border-[#3B1C32]/10 shadow-md p-6 flex flex-col items-center space-y-5
-              text-[#3B1C32] font-medium transition-all duration-300 ease-in-out">
+  <div id="menu" class="hidden md:hidden absolute top-20 right-6 bg-[#FFD1D1]/90 backdrop-blur-lg 
+    rounded-lg shadow-lg p-5 w-48 flex flex-col space-y-4 text-[#151624] font-medium 
+    transform transition-transform duration-300">
     <a class="text-black font-bold">Beranda</a>
-    <a href="program.html" class="hover:text-[#e65b5b] font-semibold">Program</a>
-    <a href="about.html" class="hover:text-[#e65b5b] font-semibold">Tentang Kami</a>
+    <a href="program.html" class="text-[#3B1C32] hover:text-[#e65b5b] font-semibold">Program</a>
+    <a href="about.html" class="text-[#3B1C32] hover:text-[#e65b5b] font-semibold">Tentang Kami</a>
   </div>
 </nav>
 
@@ -96,12 +95,19 @@
   const menu = document.getElementById('menu');
 
   btn.addEventListener('click', () => {
-    const isOpen = !menu.classList.contains('hidden');
     menu.classList.toggle('hidden');
-    btn.textContent = isOpen ? '☰' : '✕';
+    if (!menu.classList.contains('hidden')) {
+      menu.classList.remove('translate-y-[-10px]', 'opacity-0');
+      menu.classList.add('translate-y-0', 'opacity-100');
+      btn.textContent = '✕';
+    } else {
+      menu.classList.remove('translate-y-0', 'opacity-100');
+      menu.classList.add('translate-y-[-10px]', 'opacity-0');
+      btn.textContent = '☰';
+    }
   });
 </script>
-
+    
 <!-- Hero Carousel -->
 <div class="relative h-[500px] w-full overflow-hidden">
 
@@ -580,5 +586,6 @@ document.getElementById("prevJadwal").addEventListener("click", () => {
 </footer>
 </body>
 </html>
+
 
 
